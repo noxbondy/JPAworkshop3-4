@@ -39,4 +39,11 @@ public class AppUser {
         this.password = password;
         this.details = details;
     }
+public void addBookLoan(BookLoan bookLoan) {
+        bookLoans.add(bookLoan);
+}
+public void removeBookLoan(BookLoan bookLoan) {
+        bookLoans.remove(bookLoan);
+}
+
 }

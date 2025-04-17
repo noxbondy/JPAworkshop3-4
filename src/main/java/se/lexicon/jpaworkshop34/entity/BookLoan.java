@@ -28,4 +28,19 @@ public class BookLoan {
     @ManyToOne
     @JoinColumn(name="book_id")
     private Book book;
+
+    @PrePersist
+    public void prePersist() {
+        loanDate = LocalDate.now();
+        dueDate = LocalDate.now().plusDays(1);
+        borrower = null;
+        book = null;
+        this.returned = false;
+    }
+    public void TakeBookLoan(BookLoan bookLoan) {
+        returned = true;
+    }
+    public void returnBook(Book book) {
+        this.book = book;
+    }
 }

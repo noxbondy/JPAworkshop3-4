@@ -18,5 +18,4 @@ public interface UserDetailsRepository extends CrudRepository<UserDetails, Integ
     List<UserDetails>findByNameContainingIgnoreCase(String name);
     List<UserDetails>findByBirthday(LocalDate birthday);
 
-
 }

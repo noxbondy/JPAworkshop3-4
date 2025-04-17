@@ -10,8 +10,7 @@ import java.util.Set;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode
-@ToString
+
 @Entity
 public class Book {
     @Id
@@ -33,6 +32,13 @@ public class Book {
     @OneToMany(mappedBy = "book", cascade = {CascadeType.PERSIST, CascadeType.REMOVE,
             CascadeType.MERGE}, fetch = FetchType.EAGER)
     private Set<BookLoan>bookLoans;
+
+    public void addAuthor(Author author) {
+        authors.add(author);
+    }
+    public void removeAuthor(Author author) {
+        authors.remove(author);
+    }
 }
 
 
